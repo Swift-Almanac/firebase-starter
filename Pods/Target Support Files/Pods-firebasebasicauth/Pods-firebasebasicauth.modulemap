@@ -1,0 +1,6 @@
+framework module Pods_firebasebasicauth {
+  umbrella header "Pods-firebasebasicauth-umbrella.h"
+
+  export *
+  module * { export * }
+}
