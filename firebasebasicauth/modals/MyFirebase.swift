@@ -6,7 +6,7 @@
 //  Copyright © 2018 Swift Almanac. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import FirebaseCore
 import FirebaseAuth
 import FirebaseDatabase
@@ -43,13 +43,16 @@ class MyFirebase {
             }
             else {
                 print ("Logged In")
-                self.currentUser = user
-                self.userId = (user?.uid)!
                 
-                // LOAD ANY DATA HERE
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    moveToMainWindow()
+                if (self.currentUser == nil) {
+                    self.currentUser = user
+                    self.userId = (user?.uid)!
+                    print(self.userId)
+                    // LOAD ANY DATA HERE
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        moveToMainWindow()
+                    }
                 }
             }
         }
@@ -60,5 +63,34 @@ class MyFirebase {
             return
         }
         Auth.auth().removeStateDidChangeListener(listenHandler!)
+    }
+    
+    func signInAnonymous() {
+        Auth.auth().signInAnonymously() { (user, error) in
+            print("\(String(describing: error))")
+            print("\(String(describing: user))")
+        }
+    }
+    
+    func isLoggedIn() -> Bool {
+        return(currentUser != nil)
+    }
+    
+    func linkCredential(credential: AuthCredential) {
+        
+        currentUser?.link(with: credential) {
+            (user, error) in
+            
+            if let error = error {
+                print (error)
+                return
+            }
+            
+            print ("credential linked")
+        }
+    }
+    
+    func logOut() {
+        try! Auth.auth().signOut()
     }
 }

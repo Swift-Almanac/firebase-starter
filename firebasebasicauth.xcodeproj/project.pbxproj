@@ -18,6 +18,7 @@
 		BE5A786A201569A0008600E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7869201569A0008600E7 /* LoginViewController.swift */; };
 		BE5A786C201569AB008600E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A786B201569AB008600E7 /* MainViewController.swift */; };
 		BE5A786E20157177008600E7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A786D20157177008600E7 /* SettingsViewController.swift */; };
+		BE5A78702015884E008600E7 /* AppDelegate + GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A786F2015884E008600E7 /* AppDelegate + GoogleSignIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		BE5A7869201569A0008600E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE5A786B201569AB008600E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BE5A786D20157177008600E7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BE5A786F2015884E008600E7 /* AppDelegate + GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate + GoogleSignIn.swift"; sourceTree = "<group>"; };
 		EC0594232DB15D22C458213A /* Pods-firebasebasicauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasebasicauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firebasebasicauth/Pods-firebasebasicauth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				BE5A78662015694E008600E7 /* GlobalFunctions.swift */,
+				BE5A786F2015884E008600E7 /* AppDelegate + GoogleSignIn.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-firebasebasicauth/Pods-firebasebasicauth-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -212,6 +216,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -228,9 +233,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-firebasebasicauth/Pods-firebasebasicauth-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -268,6 +276,7 @@
 				BE5A78672015694E008600E7 /* GlobalFunctions.swift in Sources */,
 				BE5A786C201569AB008600E7 /* MainViewController.swift in Sources */,
 				BE5A786A201569A0008600E7 /* LoginViewController.swift in Sources */,
+				BE5A78702015884E008600E7 /* AppDelegate + GoogleSignIn.swift in Sources */,
 				BE5A784D2015674A008600E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
